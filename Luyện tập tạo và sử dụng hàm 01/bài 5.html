@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="disPlay()">
+<script>
+    let a = prompt("nhập tên của ngôi sao")
+    let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"]
+    let arr2 = ["UrsaMinor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"]
+    function disPlay() {
+        let flag = true
+        let index = 0
+        for (let i = 0; i< arr1.length;i++){
+            if (a === arr1[i]){
+                flag = true
+                index= arr2[i]
+                break;
+            }
+        }
+        if (flag){
+            document.write(` chòm sao tương ứng là : ${index}`)
+        } else {
+            document.write("không tìm thấy chòm sao tương ứng")
+        }
+    }
+</script>
+</body>
+</html>
