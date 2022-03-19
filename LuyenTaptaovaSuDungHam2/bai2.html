@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bán kính hình tròn <input type="text" id="input" oninput="calculator()" placeholder="cm"/> <br>
+Diện tích hình tròn : <span id="result1"></span><br>
+Chu vi hình tròn : <span id="resul2"></span>
+<script>
+    function dientich(number) {
+        let result = number * number * Math.PI
+        return result
+    }
+
+    function chuvi(number) {
+        let result = 2 * number * Math.PI
+        return result
+    }
+
+    function calculator() {
+        let input = document.getElementById("input").value
+        let resul1 = dientich(input)
+        let resul2 = chuvi(input)
+        document.getElementById("result1").innerHTML = (resul1).toFixed(2) + "cm2"
+        document.getElementById("resul2").innerHTML = (resul2).toFixed(2) + "cm"
+    }
+</script>
+</body>
+</html>
