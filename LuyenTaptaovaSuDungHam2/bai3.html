@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Giai thừa của <input type="text" id="input" oninput="calculator()"/> là :<span id="result"></span>
+<script>
+    function giaithua(n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * giaithua(n - 1)
+        }
+    }
+
+    function calculator() {
+        let input = document.getElementById("input").value
+        let result = giaithua(input)
+        document.getElementById("result").innerHTML = result
+    }
+</script>
+</body>
+</html>
