@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập vào chuỗi")
+    let check = "Giống";
+
+    for (let i = 0; i < chuoi.length; i++) {
+        if (chuoi[i] !== chuoi[chuoi.length - i - 1]) {
+            check = "không giống";
+        }
+    }
+    alert(check)
+</script>
+</body>
+</html>
