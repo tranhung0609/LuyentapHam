@@ -5,6 +5,59 @@
     <title>Title</title>
 </head>
 <body>
+<img src="https://c.tenor.com/RNgJ7WUXBBQAAAAM/minions-taunting.gif">
+<div>
+    <p>Add product</p>
+    <input type="text" id="add">
+    <button onclick="addProduct()">Add</button>
+    <p>Display all products</p>
+</div>
 
+<table id="displayArea" border="1">
+
+</table>
+<script>
+    let listProduct = ['Iphone12', 'Iphone12Pro', 'Iphone12Promax', 'Iphone13', 'Iphone13Pro', 'Iphone13ProMax', 'IphoneSE'];
+    displayAll()
+
+    function displayAll() {
+        let str = '  <tr>\n' +
+            '       <td>Product Name</td>\n' +
+            '       <td></td>\n' +
+            '       <td>' + listProduct.length + ' products</td>\n' +
+            '     </tr>';
+        for (let i = 0; i < listProduct.length; i++) {
+            str += '<tr><td>' + listProduct[i] + '</td>' +
+                '<td><button onclick="showFromEdit (' + i + ')"> Edit</button> </td>' +
+                '<td><button onclick="deleteProduct(' + i + ')"> Delete</button></td></tr>'
+        }
+        document.getElementById("displayArea").innerHTML = str;
+    }
+
+    function addProduct() {
+        let productName = document.getElementById("add").value;
+        document.getElementById("add").value = '';
+        listProduct.push(productName);
+        console.log(listProduct);
+        displayAll();
+    }
+
+    function deleteProduct(inDex) {
+        listProduct.splice(inDex, 1);
+        displayAll()
+    }
+
+    function showFormEdit(inDex) {
+        let str = '';
+        str = '<input type="text" id="editProduct" value="' + listProduct[inDex] + '"><button onclick="saveProduct(' + inDex + ')">Save</button>';
+        document.getElementById('edit').innerHTML = str;
+    }
+
+    function saveProduct(inDex) {
+        listProduct[inDex] = document.getElementById('editProduct').value;
+        document.getElementById('edit').innerHTML = '';
+        displayAll()
+    }
+</script>
 </body>
 </html>
